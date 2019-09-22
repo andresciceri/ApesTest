@@ -5,43 +5,43 @@ import com.google.gson.annotations.SerializedName
 class ResultsDTO (
 
 	@SerializedName("api_detail_url")
-	val api_detail_url : String,
+	var api_detail_url : String? = null,
 	@SerializedName("box_office_revenue")
-	val box_office_revenue : Int,
+	var box_office_revenue : Int? = 0,
 	@SerializedName("budget")
-	val budget : Int,
+	var budget : Int? = 0,
 	@SerializedName("date_added")
-	val date_added : String,
+	var date_added : String? = null,
 	@SerializedName("date_last_updated")
-	val date_last_updated : String,
+	var date_last_updated : String? = null,
 	@SerializedName("deck")
-	val deck : String,
+	var deck : String? = null,
 	@SerializedName("description")
-	val description : String,
+	var description : String? = null,
 	@SerializedName("distributor")
-	val distributor : String,
+	var distributor : String? = null,
 	@SerializedName("has_staff_review")
-	val has_staff_review : String,
+	var has_staff_review : String? = null,
 	@SerializedName("id")
-	val id : Int,
+	var id : Int? = 0,
 	@SerializedName("image")
-	val image : ImageDTO,
+	var image : ImageDTO? = null,
 	@SerializedName("name")
-	val name : String,
+	var name : String? = null,
 	@SerializedName("producers")
-	val producers : String,
+	var producers : String? = null,
 	@SerializedName("rating")
-	val rating : String,
+	var rating : String? = null,
 	@SerializedName("release_date")
-	val release_date : String,
+	var release_date : String? = null,
 	@SerializedName("runtime")
-	val runtime : Int,
+	var runtime : Int? = 0,
 	@SerializedName("site_detail_url")
-	val site_detail_url : String,
+	var site_detail_url : String? = null,
 	@SerializedName("studios")
-	val studios : List<StudiosDTO>,
+	var studios : List<StudiosDTO>? = null,
 	@SerializedName("total_revenue")
-	val total_revenue : Int,
+	var total_revenue : Int? = 0,
 	@SerializedName("writers")
-	val writers : List<WritersDTO>
+	var writers : List<WritersDTO>? = null
 )

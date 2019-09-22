@@ -4,23 +4,23 @@ import com.google.gson.annotations.SerializedName
 
 class ImageDTO (
 	@SerializedName("icon_url")
-	val icon_url : String,
+	var icon_url: String? = null,
 	@SerializedName("medium_url")
-	val medium_url : String,
+	var medium_url : String? = null,
 	@SerializedName("screen_url")
-	val screen_url : String,
+	var screen_url : String? = null,
 	@SerializedName("screen_large_url")
-	val screen_large_url : String,
+	var screen_large_url : String? = null,
 	@SerializedName("small_url")
-	val small_url : String,
+	var small_url : String? = null,
 	@SerializedName("super_url")
-	val super_url : String,
+	var super_url : String? = null,
 	@SerializedName("thumb_url")
-	val thumb_url : String,
+	var thumb_url : String? = null,
 	@SerializedName("tiny_url")
-	val tiny_url : String,
+	var tiny_url : String? = null,
 	@SerializedName("original_url")
-	val original_url : String,
+	var original_url : String? = null,
 	@SerializedName("image_tags")
-	val image_tags : String
+	var image_tags : String? = null
 )

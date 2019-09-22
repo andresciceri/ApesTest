@@ -4,19 +4,19 @@ import com.google.gson.annotations.SerializedName
 
 class MoviesDTO (
 	@SerializedName("error")
-	val error : String,
+	var error : String? = null,
 	@SerializedName("limit")
-	val limit : Int,
+	var limit : Int? = 0,
 	@SerializedName("offset")
-	val offset : Int,
+	var offset : Int? = 0,
 	@SerializedName("number_of_page_results")
-	val number_of_page_results : Int,
+	var number_of_page_results : Int? = 0,
 	@SerializedName("number_of_total_results")
-	val number_of_total_results : Int,
+	var number_of_total_results : Int? = 0,
 	@SerializedName("status_code")
-	val status_code : Int,
+	var status_code : Int? = 0,
 	@SerializedName("results")
-	val results : List<ResultsDTO>,
+	var results : List<ResultsDTO>? = null,
 	@SerializedName("version")
-	val version : Double
+	var version : Double? = 0.0
 )

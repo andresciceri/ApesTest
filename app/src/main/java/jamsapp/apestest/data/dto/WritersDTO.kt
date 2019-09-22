@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName
 
 class WritersDTO (
 	@SerializedName("api_detail_url")
-	val api_detail_url : String,
+	var api_detail_url : String? = null,
 	@SerializedName("id")
-	val id : Int,
+	var id : Int? = 0,
 	@SerializedName("name")
-	val name : String,
+	var name : String? = null,
 	@SerializedName("site_detail_url")
-	val site_detail_url : String
+	var site_detail_url : String? = null
 )
