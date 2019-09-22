@@ -7,8 +7,14 @@ import retrofit2.http.Query
 
 interface ApesTestApiService {
 
-    @GET("?")
-    fun getAllMovies(@Query("api_key") apiKey: String, @Query("format") format: String): Observable<MoviesDTO>
+    @GET("")
+    fun getAllMovies(@Query("api_key") apiKey: String,
+                     @Query("format") format: String): Observable<MoviesDTO>
+
+    @GET("")
+    fun getMovieById(@Query("api_key") apiKey: String,
+                     @Query("format") format: String,
+                     @Query("filter") id: String): Observable<MoviesDTO>
 
     /*@POST("user_check.php")
     fun checkUser(@Body checkUserRequestDTO: CheckUserRequestDTO): Observable<CheckUserResponseDTO>
