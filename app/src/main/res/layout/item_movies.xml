@@ -5,7 +5,7 @@
     android:id="@+id/cardview1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    card_view:cardCornerRadius="5dp"
+    card_view:cardCornerRadius="8dp"
     card_view:cardElevation="3dp"
     card_view:cardUseCompatPadding="true"
     card_view:cardPreventCornerOverlap="true">
@@ -14,7 +14,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -24,7 +25,8 @@
                 android:id="@+id/iconIv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:background="@color/colorPrimaryDark"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -49,24 +51,16 @@
 
         </FrameLayout>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/subtitle_txt"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
+            android:layout_height="wrap_content"
             android:padding="@dimen/padding8"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/subtitle_txt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minLines="1"
-                android:maxLines="5"
-                android:textColor="@color/darkGray"
-                android:textSize="@dimen/txt12"
-                android:text="@string/lorem_ipsum"/>
-
-        </LinearLayout>
+            android:maxLines="5"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/txt12"
+            android:text="@string/lorem_ipsum"
+            android:visibility="visible"/>
 
     </LinearLayout>
 

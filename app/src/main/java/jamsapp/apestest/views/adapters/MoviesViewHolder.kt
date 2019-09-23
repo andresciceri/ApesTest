@@ -2,6 +2,7 @@ package jamsapp.apestest.views.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -33,6 +34,9 @@ class MovieViewHolder(inflater: LayoutInflater, parent: ViewGroup) : RecyclerVie
 
         titleTxt?.text = results.name
 
-        descripTxt?.text = results.description
+        if(results.description != null)
+            descripTxt?.text = results.description
+        else
+            descripTxt?.visibility = View.GONE
     }
 }
