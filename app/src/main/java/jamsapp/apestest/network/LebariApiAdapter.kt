@@ -8,7 +8,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 
 class ApesTestApiAdapter {
 
-    private val baseUrl = "https://comicvine.gamespot.com/api/movies/"
+    private val baseUrl = "https://comicvine.gamespot.com/api/"
     private var apestestApiService: ApesTestApiService? = null
 
     fun getApesTestService(): ApesTestApiService? {
