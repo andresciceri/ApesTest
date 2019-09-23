@@ -1,6 +1,7 @@
 package jamsapp.apestest.views.detail
 
 import android.os.Bundle
+import android.text.Html
 import androidx.appcompat.widget.Toolbar
 import com.squareup.picasso.Picasso
 import jamsapp.apestest.R
@@ -32,10 +33,19 @@ class DetailActivity : BaseActivity() {
         collapsing_toolbar.setExpandedTitleColor(resources.getColor(android.R.color.transparent))
 
         titleDetail.text = intent.getStringExtra("title")
-        descriptionDetail.text = "Resumen: ".plus(intent.getStringExtra("description") ?: "No disponible")
-        budgetDetail.text = "Presupuesto: ".plus(intent.getStringExtra("budget") ?: "No disponible")
-        runtimeDetail.text = "Duración: ".plus(intent.getStringExtra("runtime") ?: "No disponible")
-        studiosDetail.text = "Estudios: ".plus(intent.getStringExtra("studios") ?: "No disponible")
-        writersDetail.text = "Libreto: ".plus(intent.getStringExtra("writers") ?: "No disponible")
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            descriptionDetail.text = Html.fromHtml("<b>Resumen</b>: ".plus(intent.getStringExtra("description") ?: "No disponible"), Html.FROM_HTML_MODE_LEGACY)
+            budgetDetail.text = Html.fromHtml("<b>Presupuesto</b>: ".plus(intent.getStringExtra("budget") ?: "No disponible"), Html.FROM_HTML_MODE_LEGACY)
+            runtimeDetail.text = Html.fromHtml("<b>Duración</b>: ".plus(intent.getStringExtra("runtime").plus(" min")), Html.FROM_HTML_MODE_LEGACY)
+            studiosDetail.text = Html.fromHtml("<b>Estudios</b>: ".plus(intent.getStringExtra("studios") ?: "No disponible"), Html.FROM_HTML_MODE_LEGACY)
+            writersDetail.text = Html.fromHtml("<b>Libreto</b>: ".plus(intent.getStringExtra("writers") ?: "No disponible"), Html.FROM_HTML_MODE_LEGACY)
+        } else {
+            descriptionDetail.text = Html.fromHtml("<b>Resumen</b>: ".plus(intent.getStringExtra("description")))
+            budgetDetail.text = Html.fromHtml("<b>Presupuesto</b>: ".plus(intent.getStringExtra("budget") ?: "No disponible"))
+            runtimeDetail.text = Html.fromHtml("<b>Duración</b>: ".plus(intent.getStringExtra("runtime").plus(" min")))
+            studiosDetail.text = Html.fromHtml("<b>Estudios</b>: ".plus(intent.getStringExtra("studios") ?: "No disponible"))
+            writersDetail.text = Html.fromHtml("<b>Libreto</b>: ".plus(intent.getStringExtra("writers") ?: "No disponible"))
+        }
     }
 }

@@ -57,7 +57,7 @@ class MainInteractor: IMainInteractor {
                     this.date_added = it.date_added
                     this.date_last_updated = it.date_last_updated
                     this.deck = it.deck
-                    this.description = it.description//removeHtml(it.description)
+                    this.description = it.description
                     this.distributor = it.distributor
                     this.has_staff_review = it.has_staff_review
                     this.id = it.id
@@ -116,15 +116,5 @@ class MainInteractor: IMainInteractor {
             )
         }
         return writersList
-    }
-
-    private fun removeHtml(html: String?): String? {
-        var html = html
-        html = html?.replace("<(.*?)\\>".toRegex(), "")
-        html = html?.replace("<(.*?)\\\n".toRegex(), "")
-        html = html?.replaceFirst("(.*?)\\>".toRegex(), "")
-        html = html?.replace("&nbsp;".toRegex(), "")
-        html = html?.replace("&amp;".toRegex(), "")
-        return html
     }
 }
