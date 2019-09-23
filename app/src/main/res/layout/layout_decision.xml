@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:layout_gravity="center"
+              android:background="@color/colorAccent">
+
+    <TextView
+            android:id="@+id/dialog_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin24"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt16"
+            android:text="@string/lorem_ipsum"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding8"
+            android:gravity="center_vertical|end">
+
+        <TextView
+                android:id="@+id/textNegDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:paddingLeft="@dimen/padding8"
+                android:paddingRight="@dimen/padding8"
+                android:gravity="center_vertical"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textSize="@dimen/txt16"
+                android:textStyle="bold"
+                android:text="Cancelar"
+                android:background="@color/none"/>
+
+        <TextView
+                android:id="@+id/textPosDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:paddingLeft="@dimen/padding8"
+                android:paddingRight="@dimen/padding8"
+                android:layout_marginLeft="@dimen/margin8"
+                android:gravity="center_vertical"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textSize="@dimen/txt16"
+                android:textStyle="bold"
+                android:text="Aceptar"
+                android:background="@color/none"/>
+
+    </LinearLayout>
+
+</LinearLayout>
