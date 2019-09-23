@@ -57,7 +57,7 @@ class MainInteractor: IMainInteractor {
                     this.date_added = it.date_added
                     this.date_last_updated = it.date_last_updated
                     this.deck = it.deck
-                    this.description = removeHtml(it.description)
+                    this.description = it.description//removeHtml(it.description)
                     this.distributor = it.distributor
                     this.has_staff_review = it.has_staff_review
                     this.id = it.id

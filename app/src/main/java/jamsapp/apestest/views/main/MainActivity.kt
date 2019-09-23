@@ -1,6 +1,7 @@
 package jamsapp.apestest.views.main
 
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.widget.Toast
@@ -52,15 +53,13 @@ class MainActivity : BaseActivity() {
         if (networkInfo != null && networkInfo.isConnected) {
             showProgressDialog("Cargando lista", "Espera un momento por favor", indeterminate = false, cancelable = false)
             viewModel.getAllMovies()
-
         } else {
             showSimpleToast("Al parecer no tienes conexión a internet")
         }
     }
 
     private fun setUpRecycler(){
-        val staggeredGridLayoutManager =
-            setNumberOfColumns()?.let { StaggeredGridLayoutManager(it, StaggeredGridLayoutManager.VERTICAL) }
+        val staggeredGridLayoutManager = setNumberOfColumns()?.let { StaggeredGridLayoutManager(it, StaggeredGridLayoutManager.VERTICAL) }
         val adapter = MoviesAdapter(model)
         recycler.layoutManager = staggeredGridLayoutManager
         recycler.adapter = adapter
