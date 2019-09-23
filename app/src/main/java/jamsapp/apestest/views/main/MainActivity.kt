@@ -70,8 +70,6 @@ class MainActivity : BaseActivity() {
     private fun setNumberOfColumns(): Int? {
         val displayMetrics = supportActionBar?.themedContext?.resources?.displayMetrics
         val dpWidth = displayMetrics?.widthPixels?.div(displayMetrics.density)
-        var numberOfColumns = (dpWidth?.div(160))?.toInt()
-        //numberOfColumns = numberOfColumns?.plus(1)
-        return numberOfColumns
+        return (dpWidth?.div(160))?.toInt()
     }
 }
