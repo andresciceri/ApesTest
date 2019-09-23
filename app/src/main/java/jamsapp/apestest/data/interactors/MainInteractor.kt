@@ -117,4 +117,14 @@ class MainInteractor: IMainInteractor {
         }
         return writersList
     }
+
+    /*private fun removeHtml(html: String?): String? {
+        var html = html
+        html = html?.replace("<(.*?)\\>".toRegex(), " ")
+        html = html?.replace("<(.*?)\\\n".toRegex(), " ")
+        html = html?.replaceFirst("(.*?)\\>".toRegex(), " ")
+        html = html?.replace("&nbsp;".toRegex(), " ")
+        html = html?.replace("&amp;".toRegex(), " ")
+        return html
+    }*/
 }
