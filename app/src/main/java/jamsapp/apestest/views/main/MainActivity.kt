@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import jamsapp.apestest.R
 import jamsapp.apestest.data.models.Results
+import jamsapp.apestest.utilities.Animations
 import jamsapp.apestest.views.adapters.MoviesAdapter
 import jamsapp.apestest.views.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,6 +18,7 @@ class MainActivity : BaseActivity() {
 
     private lateinit var viewModel: MainViewModel
     private var model: List<Results>? = null
+    var animations = Animations()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +37,7 @@ class MainActivity : BaseActivity() {
             hideProgressDialog()
             when(it){
                 is MainViewModel.ViewEvent.ResponseSuccess -> {
-                    Toast.makeText(supportActionBar?.themedContext, "All is correct", Toast.LENGTH_LONG).show()
+                    //Toast.makeText(supportActionBar?.themedContext, "All is correct", Toast.LENGTH_LONG).show()
                 }
                 is MainViewModel.ViewEvent.ResponseError -> {
                     Toast.makeText(supportActionBar?.themedContext, it.error, Toast.LENGTH_LONG).show()
@@ -62,13 +64,14 @@ class MainActivity : BaseActivity() {
         val adapter = MoviesAdapter(model)
         recycler.layoutManager = staggeredGridLayoutManager
         recycler.adapter = adapter
+        animations.runRecyclerAnimation(recycler)
     }
 
     private fun setNumberOfColumns(): Int? {
         val displayMetrics = supportActionBar?.themedContext?.resources?.displayMetrics
         val dpWidth = displayMetrics?.widthPixels?.div(displayMetrics.density)
         var numberOfColumns = (dpWidth?.div(160))?.toInt()
-        numberOfColumns = numberOfColumns?.plus(1)
+        //numberOfColumns = numberOfColumns?.plus(1)
         return numberOfColumns
     }
 }

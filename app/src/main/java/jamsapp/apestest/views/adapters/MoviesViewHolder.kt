@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import jamsapp.apestest.ApesTestApplication
 import jamsapp.apestest.R
 import jamsapp.apestest.data.models.Results
 
@@ -26,11 +25,14 @@ class MovieViewHolder(inflater: LayoutInflater, parent: ViewGroup) : RecyclerVie
     }
 
     fun bind(results: Results) {
+
         Picasso.with(context)
             .load(results.image?.small_url)
-            .resize(203, 300)
+            .resize(270, 400)
             .into(movieIcon)
+
         titleTxt?.text = results.name
+
         descripTxt?.text = results.description
     }
 }
