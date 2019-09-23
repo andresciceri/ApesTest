@@ -74,7 +74,7 @@ class MainInteractor: IMainInteractor {
                         this.image_tags = it.image?.image_tags
                     }
                     this.name = it.name
-                    this.producers = it.producers
+                    //this.producers = it.producers
                     this.rating = it.rating
                     this.release_date = it.release_date
                     this.runtime = it.runtime
