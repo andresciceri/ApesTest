@@ -3,13 +3,9 @@ package jamsapp.apestest.data.database
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import jamsapp.apestest.data.models.Image
-import jamsapp.apestest.data.models.Studios
-import jamsapp.apestest.data.models.Writers
 
 @Entity
 data class ResultsEntity (
-
     @PrimaryKey
     val id: Int,
     @ColumnInfo(name = "api_detail_url")
@@ -32,10 +28,10 @@ data class ResultsEntity (
     var has_staff_review : String? = null,
     @ColumnInfo(name = "movie_id")
     var movie_id : String? = null,
-
-    @ColumnInfo(name = "image")
-    var image : Image? = null,
-
+    @ColumnInfo(name = "small_url")
+    var small_url : String? = null,
+    @ColumnInfo(name = "screen_large_url")
+    var screen_large_url : String? = null,
     @ColumnInfo(name = "name")
     var name : String? = null,
     @ColumnInfo(name = "rating")
@@ -46,13 +42,10 @@ data class ResultsEntity (
     var runtime : String? = null,
     @ColumnInfo(name = "site_detail_url")
     var site_detail_url : String? = null,
-
-    @ColumnInfo(name = "studios")
-    var studios : List<Studios>? = null,
-
+    @ColumnInfo(name = "studios_name")
+    var studios : String? = null,
     @ColumnInfo(name = "total_revenue")
     var total_revenue : String? = null,
-
-    @ColumnInfo(name = "writers")
-    var writers : List<Writers>? = null
+    @ColumnInfo(name = "writers_name")
+    var writers : String? = null
 )
